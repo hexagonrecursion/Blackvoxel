@@ -85,8 +85,8 @@ void ZGameWindow_ProgressBar::Show()
   }
 
   //SDL_ShowCursor(SDL_ENABLE);
-  //SDL_WM_GrabInput(SDL_GRAB_OFF);
-  //SDL_WarpMouse((Uint16)(Pos.x + Size.x / 2.0f),(Uint16)(Pos.y + Size.y / 2.0f));
+  //;
+
   //GameEnv->Game_Events->SetDisableMouseEvents();
 
    */
@@ -98,7 +98,7 @@ void ZGameWindow_ProgressBar::Hide()
   GameEnv->GuiManager.RemoveFrame(&MainWindow);
 
   //SDL_ShowCursor(SDL_DISABLE);
-  // SDL_WM_GrabInput(SDL_GRAB_ON);
+  // ;
   //GameEnv->Game_Events->SetEnableMouseEvents();
   Flag_Shown = false;
 }

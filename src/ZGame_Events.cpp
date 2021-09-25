@@ -228,7 +228,7 @@ Bool ZGame_Events::KeyDown( UShort KeySym )
                     Long x,y,z;
                     ZActor_Player * Player;
 
-                    SDL_WM_GrabInput(SDL_GRAB_OFF); SDL_ShowCursor(SDL_ENABLE);
+                    ; SDL_ShowCursor(SDL_ENABLE);
 
                     Player = (ZActor_Player *)GameEnv->PhysicEngine->GetSelectedActor();
                     x = Player->PointedVoxel.PointedVoxel.x;
@@ -252,7 +252,7 @@ Bool ZGame_Events::KeyDown( UShort KeySym )
 
     case SDLK_F4: if (!Keyboard_Matrix[SDLK_LSHIFT])
                   {
-                    SDL_WM_GrabInput(SDL_GRAB_OFF); SDL_ShowCursor(SDL_ENABLE);
+                    ; SDL_ShowCursor(SDL_ENABLE);
 
                     GameEnv->GameWindow_ResumeRequest_Little->SetGameEnv(GameEnv);
                     GameEnv->GameWindow_ResumeRequest_Little->SetMessage((char *)"CLICK TO REGAIN CONTROL");
@@ -789,16 +789,16 @@ void ZGame_Events::Process_StillEvents()
     {
       if (!SDL_WM_GrabInput(SDL_GRAB_QUERY))
       {
-        SDL_WM_GrabInput(SDL_GRAB_ON); SDL_ShowCursor(SDL_DISABLE);
+        ; SDL_ShowCursor(SDL_DISABLE);
       }
       else
       {
-        SDL_WM_GrabInput(SDL_GRAB_OFF); SDL_ShowCursor(SDL_ENABLE);
+        ; SDL_ShowCursor(SDL_ENABLE);
       }
       Keyboard_Matrix[SDLK_F2] = 0;
     }
 
-    // if ( Keyboard_Matrix[SDLK_F3] && COMPILEOPTION_DEBUGFACILITY )   { SDL_WM_GrabInput(SDL_GRAB_OFF); SDL_ShowCursor(SDL_DISABLE); }
+    // if ( Keyboard_Matrix[SDLK_F3] && COMPILEOPTION_DEBUGFACILITY )   { ; SDL_ShowCursor(SDL_DISABLE); }
     if ( Keyboard_Matrix[SDLK_F5] )   { GameEnv->World->Save(); }
     if ( Keyboard_Matrix[SDLK_F4] && Keyboard_Matrix[SDLK_LSHIFT] && COMPILEOPTION_DEBUGFACILITY )
     {
@@ -932,7 +932,7 @@ void ZGame_Events::Process_StillEvents()
 
       printf("Pos (%ld,%ld,%ld) Sector (%ld,%ld,%ld) Zone (%ld,%ld,%ld)\n",(UNum)Position.x,(UNum)Position.y,(UNum)Position.z,(UNum)Sector.x,(UNum)Sector.y,(UNum)Sector.z,(UNum)Zone.x,(UNum)Zone.y,(UNum)Zone.z);
     }
-    if ( Keyboard_Matrix[SDLK_ESCAPE] )  { SDL_WM_GrabInput(SDL_GRAB_OFF); SDL_ShowCursor(SDL_ENABLE); GameEnv->Game_Run = false; }
+    if ( Keyboard_Matrix[SDLK_ESCAPE] )  { ; SDL_ShowCursor(SDL_ENABLE); GameEnv->Game_Run = false; }
 
 /*
     if ( Keyboard_Matrix[SDLK_F11] )

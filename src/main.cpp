@@ -221,7 +221,7 @@ int main(int argc, char *argv[])
       // ***************************************** Main Title Screen ****************************************************
 
       SDL_ShowCursor(SDL_ENABLE);
-      SDL_WM_GrabInput(SDL_GRAB_OFF);
+      ;
 
       ZScreen_Main Screen_Main;
 
@@ -313,7 +313,7 @@ int main(int argc, char *argv[])
           if (!COMPILEOPTION_NOMOUSECAPTURE)
           {
             SDL_ShowCursor(SDL_DISABLE);
-            SDL_WM_GrabInput(SDL_GRAB_ON);
+            ;
           }
 
           // Pre-Gameloop Initialisations.
